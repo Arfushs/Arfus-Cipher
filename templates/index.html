@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arfus Cipher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Arfus Cipher</h1>
+        <div class="section">
+            <h2>Encoder</h2>
+            <form id="encodeForm">
+                <label for="encodeText">Text to Encode:</label>
+                <input type="text" id="encodeText" name="text" required>
+                <label for="encodeKey">Key:</label>
+                <input type="text" id="encodeKey" name="key" required>
+                <button type="submit">Encode</button>
+            </form>
+            <p id="encodedResult"></p>
+        </div>
+        <div class="section">
+            <h2>Decoder</h2>
+            <form id="decodeForm">
+                <label for="decodeText">Text to Decode:</label>
+                <input type="text" id="decodeText" name="text" required>
+                <label for="decodeKey">Key:</label>
+                <input type="text" id="decodeKey" name="key" required>
+                <button type="submit">Decode</button>
+            </form>
+            <p id="decodedResult"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('encodeForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const text = document.getElementById('encodeText').value;
+            const key = document.getElementById('encodeKey').value;
+
+            const response = await fetch('/encode', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text, key })
+            });
+            const result = await response.json();
+            document.getElementById('encodedResult').textContent =  result.encoded_text;
+        };
+
+        document.getElementById('decodeForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const text = document.getElementById('decodeText').value;
+            const key = document.getElementById('decodeKey').value;
+
+            const response = await fetch('/decode', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text, key })
+            });
+            const result = await response.json();
+            document.getElementById('decodedResult').textContent = result.decoded_text;
+        };
+    </script>
+</body>
+</html>

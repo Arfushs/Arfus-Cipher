@@ -3,7 +3,7 @@ document.getElementById('encodeForm').onsubmit = async function(e) {
     const text = document.getElementById('encodeText').value;
     const key = document.getElementById('encodeKey').value;
 
-    const response = await fetch('https://your-pythonanywhere-username.pythonanywhere.com/encode', {
+    const response = await fetch('http://arfus.pythonanywhere.com/encode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, key })
@@ -17,7 +17,7 @@ document.getElementById('decodeForm').onsubmit = async function(e) {
     const text = document.getElementById('decodeText').value;
     const key = document.getElementById('decodeKey').value;
 
-    const response = await fetch('https://your-pythonanywhere-username.pythonanywhere.com/decode', {
+    const response = await fetch('http://arfus.pythonanywhere.com/decode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, key })

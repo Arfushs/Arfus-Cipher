@@ -1,30 +1,30 @@
 # Arfus Cipher
 
-Arfus Cipher, metinleri şifrelemek ve şifre çözmek için kullanılan bir web uygulamasıdır. Bu proje, Flask ile oluşturulmuş bir API'yi ve JavaScript ile oluşturulmuş bir kullanıcı arayüzünü içerir.
+Arfus Cipher is a web application for encoding and decoding text. This project includes an API built with Flask and a user interface built with JavaScript.
 
-## Kullanım
+## Usage
 
-### Encode İşlemi
+### Encoding
 
-Metni şifrelemek için aşağıdaki adımları izleyin:
+To encode text, follow these steps:
 
-1. Web uygulamasını açın.
-2. Encode formunda şifrelemek istediğiniz metni ve anahtarı girin.
-3. "Encode" butonuna tıklayın.
-4. Şifrelenmiş metin ekranda görüntülenecektir.
+1. Open the web application.
+2. In the encoding form, enter the text you want to encode and the key.
+3. Click the "Encode" button.
+4. The encoded text will be displayed on the screen.
 
-### Decode İşlemi
+### Decoding
 
-Şifrelenmiş metni çözmek için aşağıdaki adımları izleyin:
+To decode text, follow these steps:
 
-1. Web uygulamasını açın.
-2. Decode formunda şifresini çözmek istediğiniz metni ve anahtarı girin.
-3. "Decode" butonuna tıklayın.
-4. Çözülmüş metin ekranda görüntülenecektir.
+1. Open the web application.
+2. In the decoding form, enter the text you want to decode and the key.
+3. Click the "Decode" button.
+4. The decoded text will be displayed on the screen.
 
 ## API
 
-Flask API'miz PythonAnywhere üzerinde barındırılmaktadır. API'ye aşağıdaki URL üzerinden erişebilirsiniz:
+Our Flask API is hosted on PythonAnywhere. You can access the API at the following URL:
 
 [Arfus Cipher API](https://arfus.pythonanywhere.com)
 
